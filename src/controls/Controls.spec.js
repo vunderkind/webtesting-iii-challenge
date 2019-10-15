@@ -17,12 +17,12 @@ beforeEach(() => {
 describe('Control Toggles On Click of Button', () => {
     
     //on startup, test that the buttons rendered are the default buttons
-    // it('clicking lock gate button doesn\'t open it', () => {
-    //     expect(wrapper.queryByText(/close gate/i)).toBeInTheDocument();
-    //     rtl.fireEvent.click(wrapper.queryByText(/close gate/i));
-    //     expect("<button disabled="locked">open</button>").toBe(true);
-    //     expect(wrapper.queryByText(/open gate/i)).not.toBeInTheDocument();
-    // })
+    it('clicking lock gate button doesn\'t open it', () => {
+        expect(wrapper.queryByText(/close gate/i)).toBeInTheDocument();
+        rtl.fireEvent.click(wrapper.queryByText(/close gate/i));
+        expect(wrapper.queryByText(/close gate/i)).toBeVisible();
+        expect(wrapper.queryByText(/open gate/i)).not.toBeInTheDocument();
+    })
 
 })
 
